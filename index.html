@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buffet Nova Estação</title>
+<meta name="description" content="Buffet Nova Estação — casamentos, festas de 15 anos e celebrações inesquecíveis em Guarulhos. 18 anos realizando sonhos.">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Buffet Nova Estação · Casamentos e 15 anos em Guarulhos">
+<meta property="og:description" content="18 anos realizando sonhos. Salão clássico com escadaria iluminada e pista de LED, a 15 minutos de São Paulo.">
+<meta property="og:image" content="img/hero.jpg">
+<meta name="theme-color" content="#15110E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#F8F4EE;
+  --paper:#FFFDF9;
+  --blush:#F1E6DD;
+  --ink:#1F1A16;
+  --ink-soft:#5E554C;
+  --muted:#8A7F74;
+  --line:#E4D9CC;
+  --gold:#A88552;
+  --gold-deep:#8C6C3D;
+  --gold-light:#D9C29A;
+  --night:#15110E;
+  --night-2:#1E1915;
+  --serif:"Cormorant Garamond", "Times New Roman", serif;
+  --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
+  --wrap:1240px;
+  --gutter:clamp(16px,4vw,48px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(38px,5.2vw,68px)}
+h3{font-size:clamp(28px,3vw,36px)}
+em{font-style:italic;font-weight:300}
+p{margin:0 0 1.1em}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
+.eyebrow.center::after{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
+section{position:relative}
+.sec{padding:clamp(88px,12vw,160px) 0}
+.lead{font-size:clamp(18px,1.6vw,20px);color:var(--ink-soft)}
+.ornament{display:block;margin:0 auto;width:120px;color:var(--gold)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 32px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:1px solid transparent;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease),transform .4s var(--ease);cursor:pointer;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--gold-deep)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--ink)}
+.btn-line{border-color:var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--ivory)}
+.link-arrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+.link-arrow span{display:block;width:28px;height:1px;background:currentColor;transition:width .4s var(--ease)}
+.link-arrow:hover span{width:48px}
+
+/* Header */
+.header{position:fixed;inset:0 0 auto;z-index:50;transition:background .5s var(--ease),box-shadow .5s var(--ease),padding .5s var(--ease);padding:22px 0}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1400px}
+.brand img{height:62px;width:auto;transition:height .5s var(--ease)}
+.brand .logo-gold{display:none}
+.nav{display:flex;align-items:center;gap:clamp(18px,2.4vw,38px)}
+.nav a.nl{font-size:12.5px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:#fff;position:relative;padding:6px 0}
+.nav a.nl::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold-light);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav a.nl:hover::after{transform:scaleX(1)}
+.nav .btn{padding:13px 22px;font-size:12px}
+.header.solid{background:rgba(248,244,238,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:12px 0}
+.header.solid .brand img{height:50px}
+.header.solid .logo-white{display:none}
+.header.solid .logo-gold{display:block}
+.header.solid .nav a.nl{color:var(--ink)}
+.header.solid .burger span{background:var(--ink)}
+.burger{display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative;z-index:60}
+.burger span{position:absolute;left:10px;right:10px;height:1px;background:#fff;transition:transform .4s var(--ease),opacity .3s,background .3s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:28px}
+body.menu-open .header{z-index:70;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+body.menu-open .logo-white{display:none}
+body.menu-open .logo-gold{display:block}
+body.menu-open .burger span{background:var(--ink)}
+body.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+body.menu-open .burger span:nth-child(2){opacity:0}
+body.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:55;background:var(--ivory);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:22px;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+.mobile-menu a.ml{font-family:var(--serif);font-size:36px;color:var(--ink)}
+.mobile-menu a.ml em{color:var(--gold)}
+body.menu-open .mobile-menu{opacity:1;visibility:visible}
+body.menu-open{overflow:hidden}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--night)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;transform:scale(1.08);animation:kenburns 18s var(--ease) forwards}
+@keyframes kenburns{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(21,17,14,.78) 0%,rgba(21,17,14,.45) 38%,rgba(21,17,14,0) 70%),linear-gradient(180deg,rgba(21,17,14,.55) 0%,rgba(21,17,14,.1) 28%,rgba(21,17,14,.2) 55%,rgba(21,17,14,.85) 100%)}
+@media (min-width:1101px){
+  .hero{background:radial-gradient(ellipse at 20% 80%,#2a221c 0%,var(--night) 60%)}
+  .hero-bg{left:34%}
+  .hero-bg img{object-position:50% 40%}
+  .hero::after{background:linear-gradient(90deg,var(--night) 34%,rgba(21,17,14,.55) 44%,rgba(21,17,14,0) 62%),linear-gradient(180deg,rgba(21,17,14,.55) 0%,rgba(21,17,14,0) 25%,rgba(21,17,14,0) 65%,rgba(21,17,14,.7) 100%)}
+  .hero-content{align-self:center;padding:120px 0 40px}
+}
+@media (max-width:1100px){.hero-bg img{object-position:68% 40%}}
+@media (max-width:600px){.hero-bg img{object-position:47% 30%}.hero::after{background:linear-gradient(180deg,rgba(21,17,14,.6) 0%,rgba(21,17,14,.15) 25%,rgba(21,17,14,.55) 50%,rgba(21,17,14,.92) 100%)}}
+.hero-content{position:relative;z-index:2;width:100%;padding-bottom:clamp(64px,10vh,120px)}
+.hero .eyebrow{color:var(--gold-light)}
+.hero h1{font-size:clamp(46px,6.6vw,100px);font-weight:300;margin:22px 0 26px;max-width:11ch;text-shadow:0 2px 40px rgba(0,0,0,.25)}
+.hero h1 em{color:var(--gold-light)}
+.hero p{max-width:560px;font-size:clamp(17px,1.5vw,19px);color:rgba(255,255,255,.86);margin-bottom:38px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.scroll-cue{position:absolute;right:var(--gutter);bottom:clamp(64px,10vh,120px);z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.7);writing-mode:vertical-rl}
+.scroll-cue i{display:block;width:1px;height:70px;background:linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,0));animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* Highlights */
+.highlights{background:var(--paper);border-bottom:1px solid var(--line)}
+.highlights .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.hl{padding:38px 24px;text-align:center;border-right:1px solid var(--line)}
+.hl:last-child{border-right:0}
+.hl svg{width:30px;height:30px;color:var(--gold);margin:0 auto 14px}
+.hl strong{display:block;font-family:var(--serif);font-size:25px;font-weight:500;line-height:1.15}
+.hl span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(48px,7vw,110px);align-items:center}
+.about-media{position:relative;padding:0 0 70px 0}
+.about-media .main{aspect-ratio:4/5;overflow:hidden}
+.about-media .main img{width:100%;height:100%;object-fit:cover}
+.about-media .inset{position:absolute;right:-28px;bottom:0;width:46%;border:10px solid var(--ivory);aspect-ratio:1;overflow:hidden;box-shadow:0 30px 60px -30px rgba(31,26,22,.35)}
+.about-media .inset img{width:100%;height:100%;object-fit:cover}
+.about-media .badge{position:absolute;left:-22px;top:42px;background:var(--gold);color:#fff;padding:22px 26px;text-align:center;font-family:var(--serif);line-height:1}
+.about-media .badge b{display:block;font-size:54px;font-weight:400}
+.about-media .badge small{font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+.about h2{margin:22px 0 30px}
+.about h2 em{color:var(--gold)}
+.quote-block{margin:38px 0 0;padding:28px 0 0;border-top:1px solid var(--line)}
+.quote-block q{display:block;font-family:var(--serif);font-style:italic;font-size:clamp(28px,2.8vw,36px);line-height:1.2;color:var(--ink);quotes:"“" "”"}
+.quote-block cite{display:block;margin-top:14px;font-style:normal;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+
+/* Numbers */
+.numbers{background:var(--night);color:#fff;padding:clamp(70px,8vw,100px) 0}
+.numbers .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.num{text-align:center;position:relative}
+.num + .num::before{content:"";position:absolute;left:-12px;top:20%;bottom:20%;width:1px;background:rgba(217,194,154,.25)}
+.num b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(52px,6vw,84px);line-height:1;color:var(--gold-light)}
+.num b sup{font-size:.4em;vertical-align:top;position:relative;top:.35em;margin-left:2px}
+.num span{display:block;margin-top:12px;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+/* Events */
+.events{background:var(--paper)}
+.sec-head{text-align:center;max-width:780px;margin:0 auto clamp(56px,7vw,88px)}
+.sec-head h2{margin:22px 0 22px}
+.sec-head h2 em{color:var(--gold)}
+.event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,30px)}
+.event{position:relative;display:block;overflow:hidden;aspect-ratio:3/4.3;color:#fff;background:var(--night)}
+.event img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),opacity .6s}
+.event::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,17,14,0) 35%,rgba(21,17,14,.92) 100%);transition:background .6s}
+.event:hover img{transform:scale(1.06)}
+.event .ev-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(26px,3vw,40px)}
+.event .ev-num{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--gold-light)}
+.event h3{margin:6px 0 12px;font-size:clamp(30px,2.8vw,40px)}
+.event p{font-size:15.5px;color:rgba(255,255,255,.8);margin-bottom:22px;max-width:34ch}
+.event .link-arrow{color:var(--gold-light)}
+.event:hover .link-arrow span{width:48px}
+.also{margin-top:56px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px}
+.also small{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-right:8px}
+.chip{padding:9px 18px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--ink-soft);background:var(--ivory)}
+
+/* Staircase feature */
+.stair{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:var(--night)}
+.stair .bg{position:absolute;inset:-12% 0;will-change:transform}
+.stair .bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.stair::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(21,17,14,.62) 0%,rgba(21,17,14,.82) 100%)}
+.stair .wrap{position:relative;z-index:2;max-width:980px}
+.stair .ornament{color:var(--gold-light);margin-bottom:34px}
+.stair blockquote{margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(36px,5.4vw,76px);line-height:1.08}
+.stair blockquote em{color:var(--gold-light)}
+.stair p{margin:34px auto 40px;max-width:560px;color:rgba(255,255,255,.82)}
+
+/* Space */
+.space-intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:end;margin-bottom:clamp(48px,6vw,80px)}
+.space-intro h2{margin-top:22px}
+.space-intro h2 em{color:var(--gold)}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(120px,13vw,190px);gap:clamp(10px,1.2vw,16px)}
+.g{position:relative;overflow:hidden;cursor:zoom-in;background:var(--blush);border:0;padding:0}
+.g img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.g:hover img{transform:scale(1.05)}
+.g::after{content:attr(data-cap);position:absolute;left:16px;bottom:14px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#fff;opacity:0;transform:translateY(8px);transition:.5s var(--ease);text-shadow:0 1px 12px rgba(0,0,0,.6)}
+.g:hover::after{opacity:1;transform:none}
+.g1{grid-column:span 7;grid-row:span 3}
+.g2{grid-column:span 5;grid-row:span 2}
+.g3{grid-column:span 5;grid-row:span 1}
+.g4{grid-column:span 4;grid-row:span 2}
+.g5{grid-column:span 4;grid-row:span 2}
+.g6{grid-column:span 4;grid-row:span 2}
+.g7{grid-column:span 6;grid-row:span 2}
+.g8{grid-column:span 6;grid-row:span 2}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(48px,6vw,72px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact{padding:30px 28px;display:flex;gap:18px;align-items:center}
+.fact + .fact{border-left:1px solid var(--line)}
+.fact svg{width:34px;height:34px;color:var(--gold);flex:none}
+.fact b{display:block;font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.1}
+.fact span{font-size:14px;color:var(--muted)}
+
+/* Highlights dark (LED + mesa) */
+.dark{background:var(--night);color:#fff}
+.dark .lead{color:rgba(255,255,255,.72)}
+.feature{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(40px,6vw,96px);align-items:center}
+.feature + .feature{margin-top:clamp(88px,11vw,150px)}
+.feature.rev{grid-template-columns:1fr 1.15fr}
+.feature.rev .f-media{order:2}
+.f-media{position:relative}
+.f-media .m1{aspect-ratio:4/3;overflow:hidden}
+.f-media .m1 img{width:100%;height:100%;object-fit:cover}
+.f-media .m2{position:absolute;width:42%;aspect-ratio:1;overflow:hidden;right:-30px;bottom:-50px;border:8px solid var(--night)}
+.f-media .m2 img{width:100%;height:100%;object-fit:cover}
+.feature h2{margin:22px 0 26px;font-size:clamp(38px,4.6vw,60px)}
+.feature h2 em{color:var(--gold-light)}
+.feature .eyebrow{color:var(--gold-light)}
+.pull{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.3;color:var(--gold-light);margin:8px 0 0;padding-left:22px;border-left:1px solid rgba(217,194,154,.5)}
+
+/* Services */
+.services{background:var(--ivory)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc{padding:clamp(28px,3vw,44px) clamp(22px,2.4vw,34px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ivory);transition:background .5s var(--ease)}
+.svc:hover{background:var(--paper)}
+.svc svg{width:38px;height:38px;color:var(--gold);margin-bottom:22px}
+.svc h3{font-size:24px;font-weight:500;margin-bottom:8px}
+.svc p{font-size:15px;color:var(--muted);margin:0}
+.svc-note{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);margin-top:clamp(48px,6vw,72px)}
+.svc-note p{color:var(--ink-soft)}
+
+/* Steps */
+.steps{background:var(--blush)}
+.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,40px);counter-reset:s}
+.step{position:relative;padding-top:34px}
+.step::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:rgba(168,133,82,.4)}
+.step::after{content:"";position:absolute;top:-4px;left:0;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.step b{display:block;font-family:var(--serif);font-style:italic;font-weight:300;font-size:56px;line-height:1;color:var(--gold);margin-bottom:14px}
+.step h3{font-size:27px;font-weight:500;margin-bottom:10px}
+.step p{font-size:15.5px;color:var(--ink-soft);margin:0}
+
+/* Testimonials */
+.testi{background:var(--paper);overflow:hidden}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,30px)}
+.t{background:var(--ivory);padding:clamp(32px,3.4vw,48px);display:flex;flex-direction:column;position:relative}
+.t .qm{font-family:var(--serif);font-size:110px;line-height:.7;color:var(--gold-light);height:46px}
+.t blockquote{margin:0 0 30px;font-family:var(--serif);font-size:22px;line-height:1.45;color:var(--ink);flex:1}
+.t footer{display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid var(--line)}
+.t footer img{width:58px;height:58px;border-radius:50%;object-fit:cover}
+.t footer b{display:block;font-weight:500;font-size:16px;line-height:1.3}
+.t footer span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep)}
+.t-more{margin-top:44px;display:flex;justify-content:center;gap:34px;flex-wrap:wrap}
+
+/* CTA */
+.cta{position:relative;color:#fff;text-align:center;overflow:hidden;background:var(--night)}
+.cta .bg{position:absolute;inset:0}
+.cta .bg img{width:100%;height:100%;object-fit:cover;object-position:center 60%;opacity:.42}
+.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,17,14,.6),rgba(21,17,14,.75))}
+.cta .wrap{position:relative;z-index:2;max-width:860px}
+.cta h2{margin:22px 0 22px}
+.cta h2 em{color:var(--gold-light)}
+.cta .eyebrow{color:var(--gold-light)}
+.cta p{color:rgba(255,255,255,.82);max-width:560px;margin:0 auto 40px}
+.cta .hero-ctas{justify-content:center}
+
+/* Footer / contact */
+.foot{background:var(--night-2);color:rgba(255,255,255,.72);padding:clamp(72px,9vw,110px) 0 0;font-size:15.5px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:clamp(32px,4vw,60px)}
+.foot h4{margin:0 0 20px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-light)}
+.foot a:hover{color:#fff}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot li{margin-bottom:8px}
+.foot .brand-col img{height:74px;width:auto;margin-bottom:22px}
+.foot .tag{font-family:var(--serif);font-style:italic;font-size:22px;color:rgba(255,255,255,.85);line-height:1.35;margin-bottom:26px}
+.social{display:flex;gap:12px}
+.social a{width:42px;height:42px;border:1px solid rgba(217,194,154,.35);border-radius:50%;display:grid;place-items:center;transition:background .4s,border-color .4s}
+.social a:hover{background:var(--gold);border-color:var(--gold)}
+.social svg{width:17px;height:17px;color:#fff}
+.foot-bottom{margin-top:clamp(56px,7vw,90px);border-top:1px solid rgba(255,255,255,.08);padding:26px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.45)}
+
+/* Floating WhatsApp */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:40;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 14px 34px -10px rgba(0,0,0,.45);transition:transform .4s var(--ease)}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;color:#fff}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid #25D366;animation:ping 2.6s var(--ease) infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(15,12,10,.95);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;padding:60px 16px}
+.lb.open{opacity:1;visibility:visible}
+.lb img{max-width:min(1300px,100%);max-height:100%;object-fit:contain;box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.lb button{position:absolute;background:none;border:0;color:#fff;cursor:pointer;padding:14px;opacity:.75;transition:opacity .3s}
+.lb button:hover{opacity:1}
+.lb button svg{width:30px;height:30px}
+.lb .x{top:12px;right:12px}
+.lb .pv{left:8px;top:50%;transform:translateY(-50%)}
+.lb .nx{right:8px;top:50%;transform:translateY(-50%)}
+.lb .cap{position:absolute;bottom:20px;left:0;right:0;text-align:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* Responsive */
+@media (max-width:1080px){
+  .nav a.nl{display:none}
+  .burger{display:block}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .step-grid{grid-template-columns:repeat(2,1fr);row-gap:56px}
+}
+@media (max-width:900px){
+  .highlights .wrap{grid-template-columns:repeat(2,1fr)}
+  .hl:nth-child(2){border-right:0}
+  .hl:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .about-grid,.space-intro,.feature,.feature.rev,.svc-note{grid-template-columns:1fr}
+  .feature.rev .f-media{order:0}
+  .about-media{max-width:560px;margin-right:28px}
+  .numbers .wrap{grid-template-columns:repeat(2,1fr);row-gap:48px}
+  .num:nth-child(3)::before{display:none}
+  .event-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .event{aspect-ratio:4/4.4}
+  .t-grid{grid-template-columns:1fr;max-width:620px;margin:0 auto}
+  .facts{grid-template-columns:1fr}
+  .fact + .fact{border-left:0;border-top:1px solid var(--line)}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(150px,34vw,260px)}
+  .g1{grid-column:span 2;grid-row:span 2}
+  .g2,.g3,.g4,.g5{grid-column:span 1;grid-row:span 1}
+  .g6,.g7,.g8{grid-column:span 2;grid-row:span 1}
+  .f-media .m2{right:-10px;bottom:-36px;width:40%}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .nav .btn{display:none}
+  .brand img{height:50px}
+  .hero h1{margin:16px 0 20px}
+  .hero .eyebrow{font-size:10.5px;letter-spacing:.2em;gap:10px}
+  .hero .eyebrow::before{width:22px}
+  .hero-ctas .btn{width:100%}
+  .scroll-cue{display:none}
+  .hl{padding:28px 12px}
+  .hl strong{font-size:21px}
+  .hl span{font-size:11px;letter-spacing:.1em}
+  .svc-grid,.step-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .about-media .badge{left:-8px;top:24px;padding:16px 18px}
+  .about-media .badge b{font-size:42px}
+  .about-media .inset{right:-20px}
+  .f-media .m2{display:none}
+  .num + .num::before{display:none}
+  .stair{min-height:76vh}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header" id="top">
+  <div class="wrap">
+    <a href="#inicio" class="brand" aria-label="Buffet Nova Estação — início">
+      <img class="logo-white" src="img/logo-branco.png" alt="Buffet Nova Estação" width="436" height="196">
+      <img class="logo-gold" src="img/logo-dourado.png" alt="" width="436" height="196">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a class="nl" href="#buffet">O Buffet</a>
+      <a class="nl" href="#eventos">Eventos</a>
+      <a class="nl" href="#espaco">Nosso Espaço</a>
+      <a class="nl" href="#servicos">Serviços</a>
+      <a class="nl" href="#depoimentos">Depoimentos</a>
+      <a class="nl" href="#contato">Contato</a>
+      <a class="btn btn-gold wa" href="#" target="_blank" rel="noopener">Agendar visita</a>
+      <button class="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" aria-hidden="true">
+  <a class="ml" href="#buffet">O <em>Buffet</em></a>
+  <a class="ml" href="#eventos">Eventos</a>
+  <a class="ml" href="#espaco">Nosso <em>Espaço</em></a>
+  <a class="ml" href="#servicos">Serviços</a>
+  <a class="ml" href="#depoimentos">Depoimentos</a>
+  <a class="ml" href="#contato">Contato</a>
+  <a class="btn btn-gold wa" href="#" target="_blank" rel="noopener" style="margin-top:18px">Agendar visita</a>
+</div>
+
+<main>
+<!-- Hero -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"><img src="img/hero.jpg" alt="Noivos celebrando no alto da escadaria iluminada do Buffet Nova Estação" fetchpriority="high"></div>
+  <div class="hero-content">
+    <div class="wrap">
+      <span class="eyebrow rv">Buffet em Guarulhos · 18 anos realizando sonhos</span>
+      <h1 class="rv d1">A estação certa para o seu <em>grande dia</em></h1>
+      <p class="rv d2">Casamentos, festas de 15 anos e celebrações inesquecíveis em um salão clássico, com pista de LED e uma escadaria iluminada à sua espera — a apenas 15 minutos de São Paulo.</p>
+      <div class="hero-ctas rv d3">
+        <a class="btn btn-gold wa" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Agendar uma visita
+        </a>
+        <a class="btn btn-ghost" href="#espaco">Conhecer o espaço</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Role <i></i></div>
+</section>
+
+<!-- Highlights -->
+<section class="highlights" aria-label="Destaques">
+  <div class="wrap">
+    <div class="hl rv">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M16 4l3.2 7.4 8 .7-6 5.3 1.8 7.8L16 21.1 9 25.2l1.8-7.8-6-5.3 8-.7z"/></svg>
+      <strong>18 anos</strong><span>realizando sonhos</span>
+    </div>
+    <div class="hl rv d1">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="18" width="24" height="8"/><path d="M12 18v8M20 18v8M4 22h24"/><path d="M10 13l2-6M16 12V5M22 13l-2-6"/></svg>
+      <strong>Espaço premium</strong><span>com pista de LED</span>
+    </div>
+    <div class="hl rv d2">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="8" width="24" height="16" rx="1.5"/><path d="M4 13h24M9 19h6"/></svg>
+      <strong>Flexibilidade</strong><span>no pagamento</span>
+    </div>
+    <div class="hl rv d3">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M16 28s9-8.3 9-15a9 9 0 10-18 0c0 6.7 9 15 9 15z"/><circle cx="16" cy="13" r="3.2"/></svg>
+      <strong>15 minutos</strong><span>de São Paulo</span>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="sec about" id="buffet">
+  <div class="wrap about-grid">
+    <div class="about-media rv">
+      <div class="main"><img src="img/escada-flores.jpg" alt="Escadaria iluminada decorada com flores" loading="lazy"></div>
+      <div class="inset"><img src="img/proprietarios.jpg" alt="Hanilton e Andreia Arizati, proprietários do Buffet Nova Estação" loading="lazy"></div>
+      <div class="badge"><b>18</b><small>anos</small></div>
+    </div>
+    <div>
+      <span class="eyebrow rv">Muito prazer</span>
+      <h2 class="rv d1">Somos o Buffet <em>Nova Estação</em></h2>
+      <p class="lead rv d2">Realizamos a festa dos seus sonhos em um salão moderno, finamente decorado e com estacionamento. Nossa experiência e equipe altamente treinada proporcionam riqueza de detalhes e excelência no atendimento.</p>
+      <p class="rv d2" style="color:var(--ink-soft)">Entendemos que cada evento é único. Por isso colocamos à sua disposição nossa tradição — do planejamento à execução primorosa de garçons, maître e gerente de festa — para marcar na sua memória, e na dos seus convidados, a entrada nessa nova fase da sua vida.</p>
+      <div class="quote-block rv d3">
+        <q>Entender para atender. Juntos, realizaremos mais que um evento: realizaremos o seu sonho.</q>
+        <cite>Hanilton &amp; Andreia Arizati · Anfitriões</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Numbers -->
+<section class="numbers" aria-label="Estrutura em números">
+  <div class="wrap">
+    <div class="num rv"><b data-count="18">18</b><span>anos de tradição</span></div>
+    <div class="num rv d1"><b><span data-count="600" style="display:inline;margin:0;font-size:inherit;letter-spacing:0;color:inherit">600</span><sup>m²</sup></b><span>de estrutura completa</span></div>
+    <div class="num rv d2"><b data-count="320">320</b><span>convidados</span></div>
+    <div class="num rv d3"><b data-count="150">150</b><span>vagas com seguro</span></div>
+  </div>
+</section>
+
+<!-- Events -->
+<section class="sec events" id="eventos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow center rv">Nossas celebrações</span>
+      <h2 class="rv d1">Que festa você <em>sonha</em> realizar?</h2>
+      <p class="lead rv d2">Cada celebração tem a sua emoção. A nossa missão é fazer com que ela aconteça exatamente como você imaginou.</p>
+    </div>
+    <div class="event-grid">
+      <a class="event rv" href="#" target="_blank" rel="noopener" data-wa="Olá! Gostaria de saber mais sobre festa de casamento.">
+        <img src="img/casamento.jpg" alt="Noivos brindando no Buffet Nova Estação" loading="lazy">
+        <div class="ev-body">
+          <span class="ev-num">i.</span>
+          <h3>Casamento</h3>
+          <p>Além da festa, realizamos também a cerimônia no nosso salão, com um lindo corredor até o altar.</p>
+          <span class="link-arrow">Saiba mais <span></span></span>
+        </div>
+      </a>
+      <a class="event rv d1" href="#" target="_blank" rel="noopener" data-wa="Olá! Gostaria de saber mais sobre festa de 15 anos.">
+        <img src="img/debutante.jpg" alt="Debutante de vestido vermelho no alto da escadaria" loading="lazy">
+        <div class="ev-body">
+          <span class="ev-num">ii.</span>
+          <h3>15 Anos</h3>
+          <p>Aquele momento em que você surge como uma princesa no alto da nossa luxuosa escadaria.</p>
+          <span class="link-arrow">Saiba mais <span></span></span>
+        </div>
+      </a>
+      <a class="event rv d2" href="#diferenciais">
+        <img src="img/led.jpg" alt="Debutante dançando valsa na pista de LED" loading="lazy">
+        <div class="ev-body">
+          <span class="ev-num">iii.</span>
+          <h3>Pista &amp; Painel de LED</h3>
+          <p>Um visual deslumbrante de LED para você brilhar e tornar sua festa inesquecível.</p>
+          <span class="link-arrow">Conhecer <span></span></span>
+        </div>
+      </a>
+    </div>
+    <div class="also rv">
+      <small>Também realizamos</small>
+      <span class="chip">Aniversários</span><span class="chip">Formaturas</span><span class="chip">Bodas</span><span class="chip">Eventos corporativos</span><span class="chip">Confraternizações</span>
+    </div>
+  </div>
+</section>
+
+<!-- Staircase -->
+<section class="stair" aria-label="A escadaria">
+  <div class="bg" data-parallax><img src="img/debut-escada.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <svg class="ornament rv" viewBox="0 0 120 20" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 10h48M72 10h48"/><path d="M60 3l7 7-7 7-7-7z"/></svg>
+    <blockquote class="rv d1">A escadaria por onde você entrará no seu <em>sonho</em> está à sua espera.</blockquote>
+    <p class="rv d2">Marque uma visita, venha conhecer nosso salão e fazer uma degustação dos menus. Com certeza vamos surpreender você.</p>
+    <a class="btn btn-ghost wa rv d3" href="#" target="_blank" rel="noopener">Quero conhecer</a>
+  </div>
+</section>
+
+<!-- Space -->
+<section class="sec" id="espaco">
+  <div class="wrap">
+    <div class="space-intro">
+      <div>
+        <span class="eyebrow rv">Salão Avenida Guarulhos</span>
+        <h2 class="rv d1">Um cenário clássico, <em>pensado para você</em></h2>
+      </div>
+      <div>
+        <p class="lead rv d2">Nosso salão, finamente decorado em estilo clássico, é configurado para as necessidades do seu evento: redefinimos a disposição de mesas e cadeiras, posicionamos equipamentos e criamos um lindo corredor caso você deseje realizar a cerimônia no mesmo local da festa.</p>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <button class="g g1 rv" data-cap="O salão"><img src="img/salao.jpg" alt="Vista geral do salão com escadaria e lustres" loading="lazy"></button>
+      <button class="g g2 rv d1" data-cap="Entrada dos noivos"><img src="img/noivos-entrada.jpg" alt="Noivos no alto da escadaria florida" loading="lazy"></button>
+      <button class="g g3 rv d2" data-cap="Mesa posta"><img src="img/mesa-detalhe.jpg" alt="Mesa posta com arranjo de rosas" loading="lazy"></button>
+      <button class="g g4 rv" data-cap="Mesa de doces"><img src="img/bolo.jpg" alt="Mesa do bolo com decoração clássica dourada" loading="lazy"></button>
+      <button class="g g5 rv d1" data-cap="Escadaria"><img src="img/escada-cima.jpg" alt="Escadaria iluminada vista de cima" loading="lazy"></button>
+      <button class="g g6 rv d2" data-cap="Salão montado"><img src="img/mesas.jpg" alt="Salão com mesas montadas" loading="lazy"></button>
+      <button class="g g7 rv" data-cap="Debutantes"><img src="img/duo-escada.jpg" alt="Debutantes na escadaria com vasos de flores" loading="lazy"></button>
+      <button class="g g8 rv d1" data-cap="Pista"><img src="img/noivos-pista.jpg" alt="Noiva na pista com telão ao fundo" loading="lazy"></button>
+    </div>
+
+    <div class="facts">
+      <div class="fact rv">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 28V12l12-8 12 8v16z"/><path d="M12 28v-9h8v9"/></svg>
+        <div><b>+600 m²</b><span>de estrutura completa</span></div>
+      </div>
+      <div class="fact rv d1">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="4"/><circle cx="22" cy="12" r="3"/><path d="M3 26c0-4.4 3.6-8 8-8s8 3.6 8 8M18 19.5c1.1-.6 2.5-1 4-1 3.9 0 7 3.1 7 7"/></svg>
+        <div><b>Até 320</b><span>convidados</span></div>
+      </div>
+      <div class="fact rv d2">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 20l2.5-7h15l2.5 7v5H6z"/><path d="M6 25v3M26 25v3M6 20h20"/><circle cx="10.5" cy="22.5" r="1"/><circle cx="21.5" cy="22.5" r="1"/></svg>
+        <div><b>150 vagas</b><span>estacionamento com seguro</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Differentials -->
+<section class="sec dark" id="diferenciais">
+  <div class="wrap">
+    <div class="feature">
+      <div class="f-media rv">
+        <div class="m1"><img src="img/led2.jpg" alt="Apresentação na pista de LED com painel ao fundo" loading="lazy"></div>
+        <div class="m2"><img src="img/valsa.jpg" alt="Debutante e convidadas na pista de LED" loading="lazy"></div>
+      </div>
+      <div>
+        <span class="eyebrow rv">Pista e painel de LED · gratuitos</span>
+        <h2 class="rv d1">Um visual incrível <em>para a sua dança</em></h2>
+        <p class="lead rv d2">Uma área iluminada e controlada por software que, aliada ao painel de LED ao fundo, cria um visual único. Você vai dançar a valsa, se apresentar com as amigas — e a galera vai se divertir numa pista que encanta todos os convidados.</p>
+        <p class="rv d3" style="color:rgba(255,255,255,.6)">Máquina de fumaça, luzes, DJ e projeção para a sua retrospectiva completam a experiência.</p>
+      </div>
+    </div>
+
+    <div class="feature rev">
+      <div class="f-media rv">
+        <div class="m1"><img src="img/espelhada.jpg" alt="Mesa espelhada gigante decorada" loading="lazy"></div>
+      </div>
+      <div>
+        <span class="eyebrow rv">Novidade</span>
+        <h2 class="rv d1">Mesa espelhada <em>gigante</em></h2>
+        <p class="lead rv d2">Poderíamos até tentar descrever como essa nova mesa de decoração é linda e vai ficar perfeita na sua festa — mas preferimos que você veja com os próprios olhos.</p>
+        <p class="pull rv d3">Isso, minhas queridas noivas e debutantes, é poder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="sec services" id="servicos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow center rv">Estrutura completa</span>
+      <h2 class="rv d1">Tudo para o seu <em>evento</em></h2>
+      <p class="lead rv d2">Você não precisa se preocupar com nada: comida, bebida, equipe e organização ficam por nossa conta.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc rv">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M20 6l5 5-5 4-5-4z"/><path d="M15 11l-6 4v19h22V15l-6-4"/><path d="M20 15v19"/></svg>
+        <h3>Espaço do noivo</h3><p>Um ambiente reservado para os últimos ajustes antes da grande entrada.</p>
+      </div>
+      <div class="svc rv d1">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M15 6h10l-2 8h-6z"/><path d="M17 14l-9 20h24l-9-20"/></svg>
+        <h3>Espaço da noiva</h3><p>Conforto e privacidade para se preparar com calma e tranquilidade.</p>
+      </div>
+      <div class="svc rv d2">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M8 26l3-12 6 6 3-10 3 10 6-6 3 12z"/><path d="M8 30h24"/></svg>
+        <h3>Camarim da debutante</h3><p>O cantinho da princesa da noite para brilhar no momento certo.</p>
+      </div>
+      <div class="svc rv d3">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M8 24v-4a12 12 0 0124 0v4"/><rect x="5" y="23" width="7" height="10" rx="2"/><rect x="28" y="23" width="7" height="10" rx="2"/></svg>
+        <h3>DJ com boa música</h3><p>Trilha sonora sob medida para cada momento da sua festa.</p>
+      </div>
+      <div class="svc rv">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1"><rect x="5" y="12" width="30" height="20" rx="2"/><path d="M14 12l2-4h8l2 4"/><circle cx="20" cy="22" r="6"/></svg>
+        <h3>Foto e vídeo</h3><p>Profissionais selecionados para eternizar cada emoção.</p>
+      </div>
+      <div class="svc rv d1">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M10 7h20l-10 13z"/><path d="M20 20v12M13 33h14"/></svg>
+        <h3>Garçons e bartender</h3><p>Equipe fixa e treinada, com bebidas e drinks para todos os gostos.</p>
+      </div>
+      <div class="svc rv d2">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1"><rect x="9" y="5" width="22" height="30" rx="1"/><rect x="13" y="9" width="14" height="9"/><rect x="13" y="21" width="14" height="9"/></svg>
+        <h3>Cabine de fotos</h3><p>Diversão garantida e lembranças divertidas para os convidados.</p>
+      </div>
+      <div class="svc rv d3">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1"><rect x="9" y="7" width="22" height="28" rx="1"/><path d="M15 7V5h10v2M14 17l3 3 6-6M14 27h12"/></svg>
+        <h3>Assessoria completa</h3><p>Coordenamos todos os detalhes, da recepção às lembrancinhas.</p>
+      </div>
+    </div>
+    <div class="svc-note">
+      <p class="rv">Firmamos parceria com os melhores fornecedores, que atendem com capricho qualquer evento social: casamentos, debutantes, eventos corporativos, lançamentos, formaturas, aniversários adultos e infantis, bodas — e o que mais você imaginar.</p>
+      <p class="rv d1">O cardápio pode ser personalizado de acordo com as preferências dos seus convidados, incluindo opções veganas e vegetarianas, além de uma grande variedade de bebidas, mesas de sobremesa e bartenders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Steps -->
+<section class="sec steps" aria-label="Como funciona">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow center rv">Do primeiro contato ao grande dia</span>
+      <h2 class="rv d1">Planejamos <em>juntos</em> cada detalhe</h2>
+    </div>
+    <div class="step-grid">
+      <div class="step rv"><b>01</b><h3>Visita ao salão</h3><p>Venha conhecer nosso espaço, de segunda a sábado, e sinta o clima da sua festa.</p></div>
+      <div class="step rv d1"><b>02</b><h3>Degustação</h3><p>Prove nossos menus e escolha o cardápio ideal para seus convidados.</p></div>
+      <div class="step rv d2"><b>03</b><h3>Planejamento</h3><p>Nossa assessoria ajuda na decoração, no cardápio e em cada detalhe da recepção.</p></div>
+      <div class="step rv d3"><b>04</b><h3>O grande dia</h3><p>Você só precisa aproveitar. Nossa equipe cuida de todo o resto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="sec testi" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow center rv">Depoimentos</span>
+      <h2 class="rv d1">Sonhos que já <em>realizamos</em></h2>
+    </div>
+    <div class="t-grid">
+      <article class="t rv">
+        <div class="qm" aria-hidden="true">“</div>
+        <blockquote>Buffet de primeira qualidade, atendimento nota 1000. Tudo muito organizado e conforme combinado. Todos os convidados elogiaram. Gratidão! Minha filha está anestesiada até agora!</blockquote>
+        <footer><img src="img/dep1.jpg" alt="" loading="lazy"><div><b>Sheylla Lauro</b><span>Festa de debutante</span></div></footer>
+      </article>
+      <article class="t rv d1">
+        <div class="qm" aria-hidden="true">“</div>
+        <blockquote>Foi um sonho realizado, tudo perfeito. Desde o primeiro dia, todos muito educados e atenciosos, e a comida muito farta e uma delícia. Parabéns pelo excelente trabalho!</blockquote>
+        <footer><img src="img/dep2.jpg" alt="" loading="lazy"><div><b>Tati Suarez</b><span>Festa de debutante</span></div></footer>
+      </article>
+      <article class="t rv d2">
+        <div class="qm" aria-hidden="true">“</div>
+        <blockquote>Superou todas as nossas expectativas. Estou recebendo mensagens de convidados agradecendo por terem sido convidados para uma festa tão boa! Só tenho a agradecer por ter realizado um sonho.</blockquote>
+        <footer><img src="img/dep3.jpg" alt="" loading="lazy"><div><b>Ana Paula</b><span>Festa de casamento</span></div></footer>
+      </article>
+    </div>
+    <div class="t-more rv">
+      <a class="link-arrow" href="https://www.google.com/search?q=Buffet+Nova+Esta%C3%A7%C3%A3o+Guarulhos+avalia%C3%A7%C3%B5es" target="_blank" rel="noopener">Avaliações no Google <span></span></a>
+      <a class="link-arrow" href="https://www.facebook.com/pg/buffetnovaestacao/reviews/" target="_blank" rel="noopener">Avaliações no Facebook <span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec cta">
+  <div class="bg"><img src="img/salao.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <span class="eyebrow center rv">Vamos conversar?</span>
+    <h2 class="rv d1">Venha conhecer o <em>nosso salão</em></h2>
+    <p class="rv d2">Tire suas dúvidas, solicite um orçamento e agende sua visita. Será um prazer receber você.</p>
+    <div class="hero-ctas rv d3">
+      <a class="btn btn-gold wa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.6.6-.9 1.4-.9 2.2.1 1 .5 2 1.1 2.8 1.1 1.7 2.6 3 4.4 3.8.5.2 1 .4 1.5.5.6.2 1.2.2 1.8.1.6-.1 1.4-.6 1.6-1.2.2-.4.2-.9.1-1.2l-.4-.2z"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="tel:+551134452255">(11) 3445-2255</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="foot" id="contato">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="brand-col">
+        <img src="img/logo-dourado.png" alt="Buffet Nova Estação" width="436" height="196" loading="lazy">
+        <p class="tag">A estação certa para o seu evento.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/buffetnovaestacao" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="https://www.facebook.com/buffetnovaestacao" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8.1v3h2.5V21z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UC8vLJeinE9QsPL6IfaGF7Aw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Visite nosso salão</h4>
+        <p>Av. Guarulhos, 1299<br>Gopouva · Guarulhos – SP</p>
+        <a class="link-arrow" style="color:var(--gold-light)" href="https://www.google.com/maps/search/?api=1&query=Av.+Guarulhos,+1299+-+Gopouva,+Guarulhos+-+SP" target="_blank" rel="noopener">Como chegar <span></span></a>
+      </div>
+      <div>
+        <h4>Horários</h4>
+        <ul><li>Segunda a sábado<br>08h às 20h</li><li>Domingo mediante agendamento</li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+551134452255">(11) 3445-2255</a></li>
+          <li><a class="wa" href="#" target="_blank" rel="noopener">(11) 99995-2618 · WhatsApp</a></li>
+          <li><a href="tel:+5511982210926">(11) 98221-0926</a></li>
+          <li style="margin-top:14px"><a href="https://buffetnovaestacao.com.br/blog/" target="_blank" rel="noopener">Blog de dicas →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Buffet Nova Estação · Guarulhos – SP</span>
+      <span>Casamentos · Festas de 15 anos · Eventos</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float wa" href="#" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.6.6-.9 1.4-.9 2.2.1 1 .5 2 1.1 2.8 1.1 1.7 2.6 3 4.4 3.8.5.2 1 .4 1.5.5.6.2 1.2.2 1.8.1.6-.1 1.4-.6 1.6-1.2.2-.4.2-.9.1-1.2l-.4-.2z"/></svg>
+</a>
+
+<!-- Lightbox -->
+<div class="lb" role="dialog" aria-modal="true" aria-label="Galeria">
+  <button class="x" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <button class="pv" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15 4l-8 8 8 8"/></svg></button>
+  <img alt="">
+  <button class="nx" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 4l8 8-8 8"/></svg></button>
+  <div class="cap"></div>
+</div>
+
+<script>
+(function(){
+  var WA = 'https://wa.me/5511999952618?text=';
+  var DEF = 'Olá! Visitei o site e gostaria de agendar uma visita ao salão.';
+  document.querySelectorAll('.wa, [data-wa]').forEach(function(a){
+    a.href = WA + encodeURIComponent(a.getAttribute('data-wa') || DEF);
+  });
+
+  // Header state
+  var header = document.querySelector('.header');
+  function onScroll(){
+    header.classList.toggle('solid', window.scrollY > 60);
+    var p = document.querySelector('[data-parallax]');
+    if (p){
+      var r = p.parentElement.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < innerHeight){
+        var k = (r.top + r.height/2 - innerHeight/2) / innerHeight;
+        p.style.transform = 'translate3d(0,' + (k * -60).toFixed(1) + 'px,0)';
+      }
+    }
+  }
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Mobile menu
+  var burger = document.querySelector('.burger');
+  burger.addEventListener('click', function(){ document.body.classList.toggle('menu-open'); });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){ document.body.classList.remove('menu-open'); });
+  });
+
+  // Reveal
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'}) : null;
+  document.querySelectorAll('.rv').forEach(function(el){ io ? io.observe(el) : el.classList.add('in'); });
+
+  // Count up
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var co = 'IntersectionObserver' in window && !reduce ? new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return; co.unobserve(e.target);
+      var el = e.target, end = +el.getAttribute('data-count'), t0 = null;
+      function step(t){ if(!t0) t0 = t; var p = Math.min((t - t0)/1600, 1); p = 1 - Math.pow(1-p, 3);
+        el.textContent = Math.round(end * p); if(p < 1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    });
+  }, {threshold:.6}) : null;
+  if (co) document.querySelectorAll('[data-count]').forEach(function(el){ co.observe(el); });
+
+  // Lightbox
+  var items = Array.prototype.slice.call(document.querySelectorAll('.gallery .g'));
+  var lb = document.querySelector('.lb'), lbImg = lb.querySelector('img'), cap = lb.querySelector('.cap'), idx = 0;
+  function show(i){ idx = (i + items.length) % items.length; var im = items[idx].querySelector('img');
+    lbImg.src = im.currentSrc || im.src; lbImg.alt = im.alt; cap.textContent = items[idx].getAttribute('data-cap'); }
+  items.forEach(function(b, i){ b.addEventListener('click', function(){ show(i); lb.classList.add('open'); }); });
+  lb.querySelector('.x').onclick = function(){ lb.classList.remove('open'); };
+  lb.querySelector('.pv').onclick = function(e){ e.stopPropagation(); show(idx-1); };
+  lb.querySelector('.nx').onclick = function(e){ e.stopPropagation(); show(idx+1); };
+  lb.addEventListener('click', function(e){ if(e.target === lb) lb.classList.remove('open'); });
+  addEventListener('keydown', function(e){ if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') lb.classList.remove('open'); if(e.key === 'ArrowLeft') show(idx-1); if(e.key === 'ArrowRight') show(idx+1); });
+})();
+</script>
+</body>
+</html>
