@@ -116,15 +116,22 @@ body.menu-open{overflow:hidden}
 @media (max-width:1100px){.hero-bg img{object-position:68% 40%}}
 /* Mobile hero: photo on top, text on a solid dark band below it, so nothing sits over faces */
 @media (max-width:600px){
-  .hero{display:block;min-height:0}
+  /* hero fills exactly one screen: photo takes whatever space the text and buttons leave */
+  .hero{display:flex;flex-direction:column;align-items:stretch;min-height:100vh;min-height:100svh}
   .hero::after{display:none}
-  .hero-bg{position:relative;height:58svh;min-height:360px;overflow:hidden}
-  .hero-bg img{object-position:47% 28%}
-  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,17,14,.6) 0%,rgba(21,17,14,0) 24%,rgba(21,17,14,0) 52%,var(--night) 100%)}
-  body .hero-content{margin-top:-56px;padding-bottom:56px}
-  body .hero h1{font-size:44px;max-width:none;text-shadow:none}
-  body .hero p{color:rgba(255,255,255,.8);margin-bottom:30px}
+  .hero-bg{position:relative;flex:1 1 auto;min-height:200px;overflow:hidden}
+  .hero-bg img{position:absolute;inset:0;object-position:47% 30%}
+  .hero-bg::after{content:"";position:absolute;inset:0 0 -2px;background:linear-gradient(180deg,rgba(21,17,14,.6) 0%,rgba(21,17,14,0) 26%,rgba(21,17,14,0) 50%,var(--night) 96%)}
+  body .hero-content{flex:none;margin-top:-48px;padding-bottom:22px}
+  body .hero .eyebrow{margin-bottom:0}
+  body .hero h1{font-size:clamp(34px,10vw,42px);max-width:none;text-shadow:none;margin:10px 0 12px}
+  body .hero p{font-size:15px;line-height:1.55;color:rgba(255,255,255,.8);margin-bottom:18px}
+  body .hero-ctas{gap:10px}
+  body .hero-ctas .btn{padding:15px 20px}
   .eb-long{display:none}
+  /* floating WhatsApp would cover the hero buttons; show it once the visitor scrolls past them */
+  .wa-float{transition:opacity .4s var(--ease),transform .4s var(--ease)}
+  body.at-hero .wa-float{opacity:0;pointer-events:none;transform:scale(.8)}
 }
 .hero-content{position:relative;z-index:2;width:100%;padding-bottom:clamp(64px,10vh,120px)}
 .hero .eyebrow{color:var(--gold-light)}
@@ -793,6 +800,8 @@ body.menu-open{overflow:hidden}
   var header = document.querySelector('.header');
   function onScroll(){
     header.classList.toggle('solid', window.scrollY > 60);
+    var heroEl = document.querySelector('.hero');
+    document.body.classList.toggle('at-hero', window.scrollY < heroEl.offsetHeight - innerHeight + 80);
     var p = document.querySelector('[data-parallax]');
     if (p){
       var r = p.parentElement.getBoundingClientRect();
